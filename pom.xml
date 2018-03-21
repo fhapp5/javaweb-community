@@ -67,7 +67,7 @@
             <version>2.7.26</version>
         </dependency>
 
-        <!-- 傻逼 starter
+        <!-- starter
         <dependency>
             <groupId>com.ibeetl</groupId>
             <artifactId>beetl-framework-starter</artifactId>
