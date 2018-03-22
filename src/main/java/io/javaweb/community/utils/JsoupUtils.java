@@ -31,7 +31,7 @@ public class JsoupUtils {
      * @return
      */
     public static String cleanHTML(String content) {
-    	return WHITELIST == null ? null : Jsoup.clean(content, WHITELIST);
+    	return content == null ? null : Jsoup.clean(content, WHITELIST);
     }
     
     /**
