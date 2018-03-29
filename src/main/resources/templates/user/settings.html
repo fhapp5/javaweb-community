@@ -284,7 +284,6 @@
 					if(response.success){
                         $('.user-portrait-img').attr({'src':response.data})
 					}else{
-						layer.closeAll();
 						if(response.status == 'MISSING_VERIFY_CODE' || response.status == 'VERIFY_CODE_FAIL'){
 	            			response.message = '行为异常,限定时间内图片上传数量超过限制,请联系管理员';
 	            		}
@@ -294,6 +293,9 @@
             			});
 					}
 				},
+                complete:function(){
+                    layer.closeAll();
+                }
 			});
 	    }
     </script>
