@@ -3,7 +3,10 @@
 ***
 ### 有啥功能?
 > 基本的发布，编辑，回复帖子，在线聊天，简单的个人资料修改。。。 (自己进 javaweb.io 体验)
+### 源码在哪里？
+> [开源中国]( https://gitee.com/KevinBlandy/javaweb-community)
 
+> [github]( https://github.com/KevinBlandy/javaweb-community)
 ### 用了些啥?
 * springboot1.5.x
 * druid
