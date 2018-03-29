@@ -13,7 +13,6 @@ import io.javaweb.community.entity.dto.CollectionDTO;
 import io.javaweb.community.entity.dto.MessageDTO;
 import io.javaweb.community.entity.dto.UserDTO;
 import io.javaweb.community.enums.Status;
-import io.javaweb.community.mybatis.domain.PageList;
 import io.javaweb.community.service.CollectionService;
 import io.javaweb.community.service.MessageService;
 import io.javaweb.community.service.PostService;
@@ -29,6 +28,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.github.miemiedev.mybatis.paginator.domain.PageList;
 
 import javax.servlet.http.HttpServletRequest;
 

@@ -1,6 +1,6 @@
 package io.javaweb.community.web.support;
 
-import io.javaweb.community.mybatis.domain.Paginator;
+import com.github.miemiedev.mybatis.paginator.domain.Paginator;
 
 public class PageInfo {
 	

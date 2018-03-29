@@ -3,14 +3,15 @@ package io.javaweb.community.service;
 import io.javaweb.community.entity.MessageEntity;
 import io.javaweb.community.entity.dto.MessageDTO;
 import io.javaweb.community.mapper.MessageMapper;
-import io.javaweb.community.mybatis.domain.PageBounds;
-import io.javaweb.community.mybatis.domain.PageList;
 import io.javaweb.community.service.general.GeneralService;
 import io.javaweb.community.utils.GeneralUtils;
 import io.javaweb.community.web.support.SessionHolder;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
+import com.github.miemiedev.mybatis.paginator.domain.PageList;
 
 /**
  * Created by KevinBlandy on 2018/1/29 12:58

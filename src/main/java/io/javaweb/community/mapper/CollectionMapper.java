@@ -3,9 +3,10 @@ package io.javaweb.community.mapper;
 import io.javaweb.community.common.BaseMapper;
 import io.javaweb.community.entity.CollectionEntity;
 import io.javaweb.community.entity.dto.CollectionDTO;
-import io.javaweb.community.mybatis.domain.PageBounds;
-import io.javaweb.community.mybatis.domain.PageList;
 import org.springframework.stereotype.Repository;
+
+import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
+import com.github.miemiedev.mybatis.paginator.domain.PageList;
 
 /**
  * Created by KevinBlandy on 2018/1/29 12:22

@@ -2,11 +2,12 @@ package io.javaweb.community.mapper;
 
 import org.springframework.stereotype.Repository;
 
+import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
+import com.github.miemiedev.mybatis.paginator.domain.PageList;
+
 import io.javaweb.community.common.BaseMapper;
 import io.javaweb.community.entity.PostReplyEntity;
 import io.javaweb.community.entity.dto.PostReplyDTO;
-import io.javaweb.community.mybatis.domain.PageBounds;
-import io.javaweb.community.mybatis.domain.PageList;
 
 
 @Repository

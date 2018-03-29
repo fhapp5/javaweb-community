@@ -3,11 +3,12 @@ package io.javaweb.community.service.general;
 
 import io.javaweb.community.common.BaseMapper;
 import io.javaweb.community.common.BaseOperation;
-import io.javaweb.community.mybatis.domain.PageBounds;
-import io.javaweb.community.mybatis.domain.PageList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
+import com.github.miemiedev.mybatis.paginator.domain.PageList;
 
 import java.io.Serializable;
 

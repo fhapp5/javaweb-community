@@ -3,12 +3,13 @@ package io.javaweb.community.mapper;
 import io.javaweb.community.common.BaseMapper;
 import io.javaweb.community.entity.PostEntity;
 import io.javaweb.community.entity.dto.PostDTO;
-import io.javaweb.community.mybatis.domain.PageBounds;
-import io.javaweb.community.mybatis.domain.PageList;
 
 
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+
+import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
+import com.github.miemiedev.mybatis.paginator.domain.PageList;
 
 /**
  * Created by Kevin on 2018/1/17 22:21.

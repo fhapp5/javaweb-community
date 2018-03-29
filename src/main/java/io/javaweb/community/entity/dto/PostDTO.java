@@ -1,8 +1,9 @@
 package io.javaweb.community.entity.dto;
 
+import com.github.miemiedev.mybatis.paginator.domain.PageList;
+
 import io.javaweb.community.entity.PostEntity;
 import io.javaweb.community.entity.UserEntity;
-import io.javaweb.community.mybatis.domain.PageList;
 
 /**
  * Created by KevinBlandy on 2018/1/24 17:48

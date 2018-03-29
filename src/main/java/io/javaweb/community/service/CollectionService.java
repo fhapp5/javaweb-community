@@ -6,14 +6,15 @@ import io.javaweb.community.entity.dto.CollectionDTO;
 import io.javaweb.community.enums.Status;
 import io.javaweb.community.exception.ServiceException;
 import io.javaweb.community.mapper.CollectionMapper;
-import io.javaweb.community.mybatis.domain.PageBounds;
-import io.javaweb.community.mybatis.domain.PageList;
 import io.javaweb.community.service.general.GeneralService;
 import io.javaweb.community.utils.GeneralUtils;
 import io.javaweb.community.web.support.SessionHolder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
+import com.github.miemiedev.mybatis.paginator.domain.PageList;
 
 import java.util.Date;
 

@@ -3,7 +3,8 @@ package io.javaweb.community.web.model;
 import java.io.Serializable;
 import java.util.List;
 
-import io.javaweb.community.mybatis.domain.PageList;
+import com.github.miemiedev.mybatis.paginator.domain.PageList;
+
 
 public class Datagrid <T> implements Serializable {
 	

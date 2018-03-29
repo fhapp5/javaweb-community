@@ -11,8 +11,6 @@ import io.javaweb.community.enums.MessageType;
 import io.javaweb.community.enums.ReplyControl;
 import io.javaweb.community.exception.ServiceException;
 import io.javaweb.community.mapper.PostMapper;
-import io.javaweb.community.mybatis.domain.PageBounds;
-import io.javaweb.community.mybatis.domain.PageList;
 import io.javaweb.community.service.general.GeneralService;
 import io.javaweb.community.utils.GeneralUtils;
 import io.javaweb.community.utils.MentionUtils;
@@ -24,6 +22,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
+import com.github.miemiedev.mybatis.paginator.domain.PageList;
 
 import java.util.Date;
 import java.util.HashMap;

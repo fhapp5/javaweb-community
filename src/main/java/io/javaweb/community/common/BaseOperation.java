@@ -3,8 +3,9 @@ package io.javaweb.community.common;
 
 import java.io.Serializable;
 
-import io.javaweb.community.mybatis.domain.PageBounds;
-import io.javaweb.community.mybatis.domain.PageList;
+import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
+import com.github.miemiedev.mybatis.paginator.domain.PageList;
+
 
 /**
  * Created by KevinBlandy on 2017/10/30 13:42

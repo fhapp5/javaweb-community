@@ -1,8 +1,9 @@
 package io.javaweb.community.constants;
 
+import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
+
 import io.javaweb.community.entity.FriendLinkEntity;
 import io.javaweb.community.entity.dto.PostDTO;
-import io.javaweb.community.mybatis.domain.PageBounds;
 import io.javaweb.community.utils.PageUtils;
 
 public class ConditionBeans {
