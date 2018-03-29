@@ -6,7 +6,7 @@
 ### 源码在哪里？
 > [开源中国]( https://gitee.com/KevinBlandy/javaweb-community)
 
-> [github]( https://github.com/KevinBlandy/javaweb-community)
+> [Github]( https://github.com/KevinBlandy/javaweb-community)
 ### 用了些啥?
 * springboot1.5.x
 * druid
