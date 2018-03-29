@@ -231,6 +231,7 @@ public class UserController extends BaseController{
     //修改头像
     @PostMapping("/updatePortrait")
     @ResponseBody
+    @VerifyCode(limit = -1,max = 5,name = "update_portrait")	
     public Message<String> updatePortrait(@RequestParam("file")MultipartFile multipartFile)throws Exception{
     	UserEntity userEntity = new UserEntity();
     	userEntity.setPortrait(FileUploadUtils.fileUploads(new MultipartFile[]{multipartFile},this.imagePath,this.imagePrefix).get(0));
