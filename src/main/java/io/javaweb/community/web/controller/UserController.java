@@ -227,6 +227,13 @@ public class UserController extends BaseController{
     @PostMapping("/updatePortrait")
     @ResponseBody
     public Message<Void> updatePortrait(@RequestParam("portrait")String portrait)throws Exception{
+    	/**
+    	 * 
+    	 * 2018年3月29日 12:26:57
+    	 * 被人xss攻击
+    	 * 
+    	 */
+    	portrait = JsoupUtils.cleanHTML(portrait);
     	UserEntity userEntity = new UserEntity();
     	userEntity.setPortrait(portrait);
     	userEntity.setUserId(SessionHolder.USER_SESSION.get().getUser().getUserId());
