@@ -17,16 +17,15 @@ import io.javaweb.community.service.CollectionService;
 import io.javaweb.community.service.MessageService;
 import io.javaweb.community.service.PostService;
 import io.javaweb.community.service.UserService;
-import io.javaweb.community.utils.GeneralUtils;
-import io.javaweb.community.utils.JsoupUtils;
-import io.javaweb.community.utils.PageUtils;
-import io.javaweb.community.utils.RegUtils;
+import io.javaweb.community.utils.*;
 import io.javaweb.community.web.support.PageInfo;
 import io.javaweb.community.web.support.SessionHolder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.github.miemiedev.mybatis.paginator.domain.PageList;
@@ -53,6 +52,12 @@ public class UserController extends BaseController{
 	
 	@Autowired
 	private MessageService messageService;
+
+    @Value("${static.image.prefix}")
+    private String imagePrefix;
+
+    @Value("${static.image.path}")
+    private String imagePath;
 	
 //	@RequestMapping("/query")
 //	@ResponseBody
@@ -226,20 +231,13 @@ public class UserController extends BaseController{
     //修改头像
     @PostMapping("/updatePortrait")
     @ResponseBody
-    public Message<Void> updatePortrait(@RequestParam("portrait")String portrait)throws Exception{
-    	/**
-    	 * 
-    	 * 2018年3月29日 12:26:57
-    	 * 被人xss攻击
-    	 * 
-    	 */
-    	portrait = JsoupUtils.cleanHTML(portrait);
+    public Message<String> updatePortrait(@RequestParam("file")MultipartFile multipartFile)throws Exception{
     	UserEntity userEntity = new UserEntity();
-    	userEntity.setPortrait(portrait);
+    	userEntity.setPortrait(FileUploadUtils.fileUploads(new MultipartFile[]{multipartFile},this.imagePath,this.imagePrefix).get(0));
     	userEntity.setUserId(SessionHolder.USER_SESSION.get().getUser().getUserId());
     	this.userService.updateByPrimaryKeySelective(userEntity);
     	//TODO 广播聊天室,修改用户头像标识
-    	return Messages.SUCCESS;
+    	return super.getSuccessMessage(userEntity.getPortrait());
     }
 }
 

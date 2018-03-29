@@ -273,27 +273,16 @@
 	    	}
 	    	layer.load(2);
 	    	var formData = new FormData();
-	    	formData.append("files",file);
+	    	formData.append("file",file);
 	    	$.ajax({
-				url : '${ctxPath}/upload',
+				url : '${ctxPath}/user/updatePortrait',
 				type : 'POST',
 				data : formData,
 				processData : false,
 				contentType : false,
 				success : function(response) {
 					if(response.success){
-						$.ajax({
-							url:'${ctxPath}/user/updatePortrait',
-							data:'portrait=' + response.data,
-							method:'POST',
-							success:function(rep){
-								layer.closeAll();
-								layer.msg(rep.message);
-								if(rep.success){
-									$('.user-portrait-img').attr({'src':response.data})
-								}
-							}
-						});
+                        $('.user-portrait-img').attr({'src':response.data})
 					}else{
 						layer.closeAll();
 						if(response.status == 'MISSING_VERIFY_CODE' || response.status == 'VERIFY_CODE_FAIL'){
