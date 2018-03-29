@@ -110,6 +110,7 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
     				.addPathPatterns("/post/update")		//修改帖子
     				.addPathPatterns("/upload")				//上传图片
     				.addPathPatterns("/user/updatePass")	//修改密码
+    				.addPathPatterns("/user/updatePortrait")//修改头像
     				.addPathPatterns("/manager/login");		//管理员登录
     	
     	/**********		用户拦截器		************/
