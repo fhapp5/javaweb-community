@@ -121,6 +121,22 @@
 
     <build>
     	<finalName>javaweb-community</finalName>
+        <resources>
+            <!-- 本地 jar -->
+            <resource>
+                <directory>${basedir}/lib</directory>
+                <targetPath>BOOT-INF/lib/</targetPath>
+                <includes>
+                    <include>**/*.jar</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
