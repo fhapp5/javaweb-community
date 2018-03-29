@@ -281,6 +281,7 @@
 				processData : false,
 				contentType : false,
 				success : function(response) {
+					layer.closeAll();
 					if(response.success){
                         $('.user-portrait-img').attr({'src':response.data})
 					}else{
@@ -294,7 +295,7 @@
 					}
 				},
                 complete:function(){
-                    layer.closeAll();
+                    
                 }
 			});
 	    }
