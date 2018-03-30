@@ -1,6 +1,7 @@
 package io.javaweb.community.generate;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -29,7 +30,7 @@ public class EntityWorker {
 			entityInfo.setTableName(clazz.getAnnotation(Entity.class).table());
 			getFields(clazz).stream().forEach(field -> {
 				if(!field.isAnnotationPresent(Ignore.class)) {
-					if(!field.getName().equals("serialVersionUID") && !Character.isUpperCase(field.getName().toCharArray()[0])) {
+					if(!Modifier.isStatic(field.getModifiers())) {
 						if(field.isAnnotationPresent(Id.class)) {
 							entityInfo.getIds().add(field.getName());
 						}else {
