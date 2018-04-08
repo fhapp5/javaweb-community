@@ -84,7 +84,6 @@ public class RegisterController extends BaseController {
 		if(name.trim().equals("匿名用户")) {
 			throw new ServiceException("用户名已经存在", Message.Status.ALREADY_EXIST);
 		}
-
 		RegUtils.match(RegUtils.Regex.of("邮箱地址",email,RegUtils.REG_EMAIL),
 						RegUtils.Regex.of("用户名",name,RegUtils.REG_NAME),
 						RegUtils.Regex.of("登录密码",password,RegUtils.REG_PASS));
@@ -99,7 +98,7 @@ public class RegisterController extends BaseController {
 		userEntity.setName(name);
 		userEntity.setPass(DigestUtils.md5DigestAsHex(DigestUtils.md5DigestAsHex(password.getBytes()).getBytes()));
 
-		userEntity.setEmailVerifi(Boolean.FALSE);
+		userEntity.setEmailVerifi(Boolean.TRUE);
 		//随机默认头像
 		userEntity.setPortrait(GeneralUtils.choose(DEFAULT_PORTRAITS));
 		userEntity.setPhoneVerifi(Boolean.FALSE);

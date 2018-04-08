@@ -123,7 +123,7 @@
                     data:formData,
                     success:function(response){
                         if(response.success){
-                            window.location.href = '${ctxPath}/activation/send';
+                            window.location.href = '${ctxPath}/index';
                         }else{
                             layer.closeAll();
                             layer.msg(response.status == 'MISSING_VERIFY_CODE' ? '请输入验证码' : response.message);

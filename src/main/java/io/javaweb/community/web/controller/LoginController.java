@@ -75,7 +75,9 @@ public class LoginController extends BaseController {
 	
 	@Autowired
 	private LoginRecordService loginRecordService;
-	
+
+	private String localIp = WebUtils.getLocalHostLANAddress().getHostAddress();
+
 	/**
 	 * 登录页面
 	 * @param from
@@ -127,7 +129,8 @@ public class LoginController extends BaseController {
         Cookie cookie = new Cookie(CookieKeys.USER_SESSION,sessionKey);
         cookie.setPath("/");
         //Emmmmmmm windows下肯定是测试环境了
-        cookie.setDomain(GeneralUtils.isWindows() ? "127.0.0.1" : "javaweb.io");
+		//System.out.println("WebUtils.getLocalHostLANAddress().getHostAddress() : " +  WebUtils.getLocalHostLANAddress().getHostAddress());
+		cookie.setDomain(GeneralUtils.isWindows() ?  localIp : "javaweb.io");
         //cookie 7天
         cookie.setMaxAge(remenber ? (60 * 60 * 24 * 7) : -1);
         cookie.setHttpOnly(Boolean.TRUE);

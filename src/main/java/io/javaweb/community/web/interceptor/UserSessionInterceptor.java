@@ -69,7 +69,6 @@ public class UserSessionInterceptor extends BaseInterceptor {
 		UserEntity userEntity = this.userService.queryByPrimaryKey(userSession.getUser().getUserId());
 		if(userEntity == null) {
 			// 用户未持久化,删除cookie
-			
 			this.stringRedisTemplate.delete(RedisKeys.SESSION_USER + cookieValue);
 			Cookie cookie = new Cookie(CookieKeys.USER_SESSION,cookieValue);
 			cookie.setMaxAge(0);

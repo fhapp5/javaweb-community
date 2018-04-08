@@ -1,5 +1,9 @@
 package io.javaweb.community.common;
 
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 
 
@@ -38,12 +42,9 @@ public class BaseController {
 		errorMessage.setMessage(message);
 		return errorMessage;
 	}
-	
-//	public Message<Void> getSessionUser(HttpServletRequest request){
-//		String cookie = WebUtils.getCookieValue(request, CookieKeys.SESSION_COOKIE_NAME);
-//		if(!GeneralUtils.isEmpty(cookie)) {
-//			
-//		}
-//		return null;
-//	}
+
+	public HttpServletRequest getRequest() {
+		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+		return request;
+	}
 }

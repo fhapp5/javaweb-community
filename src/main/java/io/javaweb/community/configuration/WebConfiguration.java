@@ -57,12 +57,6 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
     @Override
     public void addFormatters(FormatterRegistry registry) {
         super.addFormatters(registry);
-//        registry.addConverterFactory(new ConverterFactory<String, Enum<?>>() {
-//			@Override
-//			public <T extends Enum<?>> Converter<String, T> getConverter(Class<T> targetType) {
-//				return null;
-//			}
-//		});
         registry.addConverter(new EnumConverter());
         registry.addConverter(new DateConverter());
     }

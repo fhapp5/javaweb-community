@@ -17,6 +17,8 @@ public class BlackListInterceptor extends BaseInterceptor{
 
 	@Override
 	protected boolean preHandle(HttpServletRequest request, HttpServletResponse response, HandlerMethod handlerMethod,String requestUri, Object handler) throws Exception {
+
+
 		return true;
 	}
 

@@ -43,6 +43,7 @@ public class ForgetPassController extends BaseController {
 	
 	@Autowired
     private MailService mailService;
+
 	
 	//发送重置密码的邮件
 	@PostMapping
@@ -57,7 +58,8 @@ public class ForgetPassController extends BaseController {
 		}
 		
 		String code = this.stringRedisTemplate.opsForValue().get(RedisKeys.FORGET_PASS + userEntity.getUserId());
-		
+
+
 		if(!GeneralUtils.isEmpty(code)) {
 			return super.getErrorMessage("重置邮件已经发出,请检查邮箱。10分钟后可以再次发送");
 		}
